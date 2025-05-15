@@ -3,7 +3,7 @@ name: Run PHPUnit Tests
 on:
   push:
   pull_request:
-  workflow_dispatch:  # Allows manual run
+  workflow_dispatch:
 
 jobs:
   test:
@@ -16,9 +16,10 @@ jobs:
         uses: shivammathur/setup-php@v2
         with:
           php-version: '8.1'
+          extensions: pdo, pdo_mysql
 
-      - name: Install Dependencies
-        run: composer install
+      - name: Install Composer Dependencies
+        run: composer install --no-interaction --prefer-dist
 
-      - name: Run Tests
+      - name: Run PHPUnit
         run: ./vendor/bin/phpunit
