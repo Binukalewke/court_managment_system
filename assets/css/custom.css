@@ -1,0 +1,146 @@
+button, .btn, a[href], input[type="submit"] {
+    cursor: pointer;
+}
+
+/* Custom CSS for the hover underline animation */
+.nav-link {
+    position: relative;
+    display: inline-block;
+}
+
+.nav-link::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -2px; /* Adjust this value to control the distance of the underline */
+    width: 2px;
+    height: 2px; /* Thickness of the underline */
+    background-color: #dc2626; /* Red color for the underline */
+    transition: width 0.3s ease-in-out; /* Smooth transition */
+}
+
+.nav-link:hover::after {
+    width: 100%; /* Full width on hover */
+}
+
+/* Prevent scrolling when off-canvas menu is open */
+body.menu-open {
+    overflow: hidden;
+}
+
+/* Background blur effect */
+#mobile-menu-overlay {
+    display: none; /* Hidden by default */
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.5); /* Semi-transparent black */
+    backdrop-filter: blur(5px); /* Blur effect */
+    z-index: 30; /* Below the off-canvas menu */
+}
+
+.custom-modal-blur {
+    background: rgba(0, 0, 0, 0.5); /* Semi-transparent black */
+    backdrop-filter: blur(5px); /* Blur effect */
+}
+
+/* Show overlay when off-canvas menu is open */
+body.menu-open #mobile-menu-overlay {
+    display: block;
+}
+
+/* Custom CSS for the hover underline animation */
+.underline-effect {
+    position: relative;
+    display: inline-block;
+}
+
+/* Apply Oswald font to headings */
+h1, h2 {
+    font-family: 'Oswald', sans-serif;
+    font-weight: 700; /* Bold */
+}
+
+#scrollContainer {
+    scroll-snap-type: x mandatory;
+}
+
+#scrollContainer > div > div {
+    scroll-snap-align: start;
+}
+
+#scrollContainer::-webkit-scrollbar {
+    height: 6px;
+}
+
+#scrollContainer::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+#scrollContainer::-webkit-scrollbar-thumb {
+    background: #dc2626;
+}
+
+.underline-effect::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -2px; /* Adjust this value to control the distance of the underline */
+    width: 0;
+    height: 1px; /* Thickness of the underline */
+    background-color: #dc2626; /* Red color for the underline */
+    transition: width 0.3s ease-in-out; /* Smooth transition */
+}
+
+.underline-effect:hover::after {
+    width: 100%; /* Full width on hover */
+}
+
+
+
+/* Page Transition Overlay */
+#transition-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: black;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.5s ease, visibility 0.5s ease;
+    z-index: 1000; /* Ensure it's above other content */
+}
+
+#transition-overlay.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+/* Fade-in and Fade-out for the body */
+body {
+    opacity: 1;
+    transition: opacity 0.5s ease;
+}
+
+body.fade-out {
+    opacity: 0;
+}
+
+.error-message{
+    background-color:rgb(255, 173, 173); 
+    border-color: #f87171; 
+    color: #7f1d1d;
+}
+
+/* Resend Code Button Styling */
+.resend-code-button {
+    border: 2px solid #dc2626; /* Red border */
+    color: #dc2626; /* Red text */
+    background-color: transparent; /* Transparent background */
+    transition: all 0.3s ease; /* Smooth transition */
+}
+
+.resend-code-button:hover {
+    border-color: #000; /* Black border on hover */
+    color: #000; /* Black text on hover */
+}
